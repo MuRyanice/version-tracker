@@ -3,6 +3,8 @@
 ## [未发布]
 ### 新功能 🎉
 - 初始化版本AI追踪插件，实现基础功能 (@MuRyanice)
+- 初始化版本AI追踪插件，实现基础功能 (@MuRyanice)
+- 初始化版本AI追踪插件，实现基础功能 (@MuRyanice)
 
 ### Bug 修复 🐛
 - 修复changelog格式问题 (@MuRyanice)
