@@ -2,6 +2,7 @@
 
 ## [未发布]
 ### 新功能 🎉
+- 添加Git自动监听功能 (@MuRyanice)
 - 初始化版本追踪插件项目 (@MuRyanice)
 - 初始化版本追踪插件项目 (@MuRyanice)
 - 初始化版本追踪插件项目 (@MuRyanice)
