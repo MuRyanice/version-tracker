@@ -38,7 +38,8 @@
   "activationEvents": [
     "onCommand:version-tracker.addFeature",
     "onCommand:version-tracker.addBugfix",
-    "onCommand:version-tracker.createNewVersion"
+    "onCommand:version-tracker.createNewVersion",
+    "workspaceContains:.git"
   ],
   "main": "./dist/extension.js",
   "contributes": {
