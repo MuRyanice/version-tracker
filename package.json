@@ -1,0 +1,82 @@
+{
+  "name": "version-tracker",
+  "displayName": "Version Tracker-版本变更管理器",
+  "description": "Track version changes and maintain changelog automatically | 自动追踪版本变更并维护更新日志",
+  "version": "0.0.1",
+  "publisher": "MuRyan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MuRyanice/version-tracker"
+  },
+  "icon": "resources/icon.png",
+  "galleryBanner": {
+    "color": "#2B88D9",
+    "theme": "dark"
+  },
+  "keywords": [
+    "changelog",
+    "version",
+    "tracking",
+    "git",
+    "版本管理",
+    "更新日志"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "capabilities": {
+    "virtualWorkspaces": true,
+    "untrustedWorkspaces": {
+      "supported": true,
+      "description": "This extension can run in untrusted workspaces."
+    }
+  },
+  "engines": {
+    "vscode": "^1.93.1",
+    "cursor": "^1.0.0"
+  },
+  "activationEvents": [
+    "onCommand:version-tracker.addFeature",
+    "onCommand:version-tracker.addBugfix",
+    "onCommand:version-tracker.createNewVersion"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "version-tracker.addFeature",
+        "title": "添加新功能记录"
+      },
+      {
+        "command": "version-tracker.addBugfix",
+        "title": "添加Bug修复记录"
+      },
+      {
+        "command": "version-tracker.createNewVersion",
+        "title": "创建新版本"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "test-compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "@types/vscode": "^1.93.1",
+    "simple-git": "^3.27.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "extensionDependencies": [],
+  "extensionPack": []
+}
