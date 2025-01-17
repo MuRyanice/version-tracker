@@ -1,93 +1,99 @@
-# Version Tracker-版本变更管理器
+# Version AI Tracker - 版本AI自动化管理神器
 
-一个用于追踪项目版本变更的 Cursor 和 VSCode 插件，支持自动记录功能迭代和 Bug 修复记录。通过简单的操作即可维护项目的版本历史和更新日志。
+[English](#english) | [简体中文](#简体中文)
 
-## 功能特性
+## English
 
-### 1. 版本变更记录
-- 自动监听 git commit 记录项目变更
-- 支持手动添加变更记录
-- 记录变更提交人信息
-- 区分功能迭代和 Bug 修复
-- 支持创建新版本记录
+An AI-powered version tracking and changelog management tool for VSCode and Cursor. Automatically monitors your Git commits, intelligently categorizes changes, and maintains a well-structured changelog.
 
-### 2. 文档管理
-- 自动维护项目根目录的 CHANGELOG.md 文件
-- 支持未发布内容区域和已发布版本区域
-- 记录版本发布时间
-- 支持 Markdown 格式的变更日志
+### 🌟 Key Features
 
-### 3. 操作方式
-- VSCode 命令面板操作
-- 文件右键菜单操作
-- Git commit 自动触发
+- **AI-Powered Tracking**: Automatically detects and categorizes your Git commits
+- **Smart Version Management**: Intelligently organizes changes into features and bug fixes
+- **Bilingual Support**: Full support for both English and Chinese
+- **Git Integration**: Seamless integration with your Git workflow
+- **Real-time Updates**: Instant changelog updates as you commit
 
-## 使用方法
+### 🚀 Getting Started
 
-### 1. 命令面板功能
-- `添加新功能记录`: 手动添加新功能记录
-- `添加Bug修复记录`: 手动添加 Bug 修复记录
-- `创建新版本`: 创建新的版本记录
+1. **Installation**
+   - Open VSCode/Cursor
+   - Press `Ctrl+P` / `Cmd+P`
+   - Type `ext install muryan.version-ai-tracker`
 
-### 2. Git Commit 规范
-bash
-新功能提交
-git commit -m "feat: 添加新功能描述"
-Bug修复提交
-git commit -m "fix: 修复问题描述"
+2. **Basic Usage**
+   - Add Feature: `Version AI Tracker: Add New Feature`
+   - Add Bug Fix: `Version AI Tracker: Add Bug Fix`
+   - Create Version: `Version AI Tracker: Create New Version`
 
-### 3. CHANGELOG.md 格式
+3. **Git Commit Integration**
+   ```bash
+   # Add new feature
+   git commit -m "feat: add user authentication"
 
-markdown
-更新日志
-[未发布]
-新功能 🎉
-添加用户登录界面 (@zhangsan)
-优化数据加载性能 (@lisi)
-Bug 修复 🐛
-修复移动端显示异常 (@wangwu)
-[v1.0.0] - 2024-03-20
-新功能 🎉
-初始化项目框架 (@zhangsan)
-实现基础API (@lisi)
-Bug 修复 🐛
-修复配置文件读取错误 (@wangwu)
+   # Fix a bug
+   git commit -m "fix: resolve login issue"
+   ```
 
-## 技术实现
+### 🤝 Contributing
 
-### 1. 核心功能
-- VSCode 插件开发（TypeScript）
-- Git 提交监听
-- Markdown 文档处理
-- 版本管理
+We welcome contributions! If you have suggestions or find bugs:
+1. Open an issue on GitHub
+2. Fork the repository
+3. Create a pull request
 
-### 2. 工作流程
-1. 开发人员提交代码（自动）或手动添加记录
-2. 插件解析变更信息
-3. 更新 CHANGELOG.md 文件
-4. 版本发布时整理记录
+### 📞 Contact & Support
 
-## 开发计划
+- GitHub Issues: [Report Bug](https://github.com/MuRyanice/version-tracker/issues)
+- Email: mylapland99@gmail.com
+- Twitter: [@MuRyanice](https://twitter.com/MuRyanice)
 
-### 第一阶段
-- [x] 基础插件框架搭建
-- [x] 手动记录功能实现
-- [x] Markdown 文档生成
+## 简体中文
 
-### 第二阶段
-- [ ] Git commit 监听功能
-- [ ] 版本管理功能
-- [ ] 文档自动更新
+一款由 AI 驱动的 VSCode 和 Cursor 版本追踪插件。自动监控 Git 提交，智能分类变更，维护结构化的更新日志。
 
-### 第三阶段
-- [ ] 用户界面优化
-- [ ] 配置选项支持
-- [ ] 自定义模板支持
+### 🌟 核心特性
 
-## 贡献指南
+- **AI 智能追踪**：自动检测并分类您的 Git 提交
+- **智能版本管理**：智能组织功能更新和问题修复
+- **双语支持**：完整支持中文和英文
+- **Git 集成**：与 Git 工作流无缝集成
+- **实时更新**：提交代码时即时更新日志
 
-欢迎提交 Issue 和 Pull Request 来帮助改进这个插件。
+### 🚀 快速开始
 
-## 许可证
+1. **安装插件**
+   - 打开 VSCode/Cursor
+   - 按下 `Ctrl+P` / `Cmd+P`
+   - 输入 `ext install muryan.version-ai-tracker`
 
-MIT License
+2. **基本使用**
+   - 添加新功能：`Version AI Tracker: 添加新功能记录`
+   - 添加Bug修复：`Version AI Tracker: 添加Bug修复记录`
+   - 创建新版本：`Version AI Tracker: 创建新版本`
+
+3. **Git 提交集成**
+   ```bash
+   # 添加新功能
+   git commit -m "feat: 添加用户认证功能"
+
+   # 修复问题
+   git commit -m "fix: 解决登录问题"
+   ```
+
+### 🤝 参与贡献
+
+欢迎参与项目贡献！如果您有建议或发现问题：
+1. 在 GitHub 上提交 Issue
+2. Fork 项目仓库
+3. 创建 Pull Request
+
+### 📞 联系与支持
+
+- GitHub Issues：[报告问题](https://github.com/MuRyanice/version-tracker/issues)
+- 邮箱：mylapland99@gmail.com
+- 推特：[@MuRyanice](https://twitter.com/ForInitial)
+
+## License
+
+MIT License - Copyright (c) 2024 MuRyanice

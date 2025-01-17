@@ -17,17 +17,17 @@ export class GitManager {
             const gitWatcher = vscode.workspace.createFileSystemWatcher('**/.git/logs/HEAD');
             
             // 添加日志输出
-            vscode.window.showInformationMessage('Git监听已启动');
+            vscode.window.showInformationMessage('Git监听已启动 | Git monitoring started');
             
             gitWatcher.onDidChange(async () => {
-                vscode.window.showInformationMessage('检测到Git提交');
+                vscode.window.showInformationMessage('检测到Git提交 | Git commit detected');
                 await this.handleNewCommit();
             });
 
             // 立即检查最新提交
             await this.handleNewCommit();
         } catch (error: any) {
-            vscode.window.showErrorMessage(`启动Git监听失败: ${error.message}`);
+            vscode.window.showErrorMessage(`启动Git监听失败 | Failed to start Git monitoring: ${error.message}`);
         }
     }
 
@@ -39,21 +39,21 @@ export class GitManager {
                 const { message, author_name } = log.latest;
                 
                 // 添加日志输出
-                vscode.window.showInformationMessage(`检测到提交: ${message}`);
+                vscode.window.showInformationMessage(`检测到提交 | Commit detected: ${message}`);
                 
                 // 解析 commit 消息
                 if (message.startsWith('feat:')) {
                     const description = message.substring(5).trim();
                     await this.changelogManager.addFeature(description, author_name);
-                    vscode.window.showInformationMessage('已添加新功能记录');
+                    vscode.window.showInformationMessage('已添加新功能记录 | New feature record added');
                 } else if (message.startsWith('fix:')) {
                     const description = message.substring(4).trim();
                     await this.changelogManager.addBugfix(description, author_name);
-                    vscode.window.showInformationMessage('已添加Bug修复记录');
+                    vscode.window.showInformationMessage('已添加Bug修复记录 | Bug fix record added');
                 }
             }
         } catch (error: any) {
-            vscode.window.showErrorMessage(`处理Git提交失败: ${error.message}`);
+            vscode.window.showErrorMessage(`处理Git提交失败 | Failed to process Git commit: ${error.message}`);
         }
     }
 } 

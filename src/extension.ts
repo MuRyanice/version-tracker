@@ -21,16 +21,25 @@ export function activate(context: vscode.ExtensionContext) {
     let addFeatureDisposable = vscode.commands.registerCommand('version-tracker.addFeature', async () => {
         try {
             const description = await vscode.window.showInputBox({
-                prompt: '请输入新功能描述',
-                placeHolder: '例如：添加用户登录界面'
+                title: vscode.env.language === 'zh-cn' ? "添加新功能" : "Add New Feature",
+                prompt: vscode.env.language === 'zh-cn' ? 
+                    "请输入新功能描述" : "Enter feature description",
+                placeHolder: vscode.env.language === 'zh-cn' ? 
+                    "例如：添加用户登录界面" : "e.g., Add user login interface"
             });
 
             if (description) {
                 await changelogManager.addFeature(description);
-                vscode.window.showInformationMessage('新功能记录已添加');
+                const message = vscode.env.language === 'zh-cn' ? 
+                    "新功能记录已添加" : 
+                    "New feature record added";
+                vscode.window.showInformationMessage(message);
             }
         } catch (error: any) {
-            vscode.window.showErrorMessage(`添加功能记录失败: ${error.message}`);
+            const errorMessage = vscode.env.language === 'zh-cn' ? 
+                `添加功能记录失败: ${error.message}` : 
+                `Failed to add feature: ${error.message}`;
+            vscode.window.showErrorMessage(errorMessage);
         }
     });
 
@@ -38,16 +47,25 @@ export function activate(context: vscode.ExtensionContext) {
     let addBugfixDisposable = vscode.commands.registerCommand('version-tracker.addBugfix', async () => {
         try {
             const description = await vscode.window.showInputBox({
-                prompt: '请输入Bug修复描述',
-                placeHolder: '例如：修复移动端显示异常'
+                title: vscode.env.language === 'zh-cn' ? "添加Bug修复" : "Add Bug Fix",
+                prompt: vscode.env.language === 'zh-cn' ? 
+                    "请输入Bug修复描述" : "Enter bug fix description",
+                placeHolder: vscode.env.language === 'zh-cn' ? 
+                    "例如：修复移动端显示异常" : "e.g., Fix mobile display issues"
             });
 
             if (description) {
                 await changelogManager.addBugfix(description);
-                vscode.window.showInformationMessage('Bug修复记录已添加');
+                const message = vscode.env.language === 'zh-cn' ? 
+                    "Bug修复记录已添加" : 
+                    "Bug fix record added";
+                vscode.window.showInformationMessage(message);
             }
         } catch (error: any) {
-            vscode.window.showErrorMessage(`添加Bug修复记录失败: ${error.message}`);
+            const errorMessage = vscode.env.language === 'zh-cn' ? 
+                `添加Bug修复记录失败: ${error.message}` : 
+                `Failed to add bug fix: ${error.message}`;
+            vscode.window.showErrorMessage(errorMessage);
         }
     });
 
@@ -55,16 +73,31 @@ export function activate(context: vscode.ExtensionContext) {
     let createVersionDisposable = vscode.commands.registerCommand('version-tracker.createNewVersion', async () => {
         try {
             const version = await vscode.window.showInputBox({
-                prompt: '请输入新版本号',
-                placeHolder: '例如：1.0.0'
+                title: vscode.env.language === 'zh-cn' ? "创建新版本" : "Create New Version",
+                prompt: vscode.env.language === 'zh-cn' ? 
+                    "请输入新版本号" : "Enter new version number",
+                placeHolder: vscode.env.language === 'zh-cn' ? 
+                    "例如：1.0.0" : "e.g., 1.0.0",
+                validateInput: (value: string) => {
+                    const message = vscode.env.language === 'zh-cn' ? 
+                        "请输入有效的版本号 (x.y.z)" : 
+                        "Please enter a valid version number (x.y.z)";
+                    return /^\d+\.\d+\.\d+$/.test(value) ? null : message;
+                }
             });
 
             if (version) {
                 await changelogManager.createNewVersion(version);
-                vscode.window.showInformationMessage(`版本 ${version} 已创建`);
+                const message = vscode.env.language === 'zh-cn' ? 
+                    `版本 ${version} 已创建` : 
+                    `Version ${version} created`;
+                vscode.window.showInformationMessage(message);
             }
         } catch (error: any) {
-            vscode.window.showErrorMessage(`创建新版本失败: ${error.message}`);
+            const errorMessage = vscode.env.language === 'zh-cn' ? 
+                `创建新版本失败: ${error.message}` : 
+                `Failed to create version: ${error.message}`;
+            vscode.window.showErrorMessage(errorMessage);
         }
     });
 

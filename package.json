@@ -1,7 +1,7 @@
 {
-  "name": "version-tracker",
-  "displayName": "Version Tracker-版本变更管理器",
-  "description": "Track version changes and maintain changelog automatically | 自动追踪版本变更并维护更新日志",
+  "name": "version-ai-tracker",
+  "displayName": "Version AI Tracker - 版本AI自动化管理神器",
+  "description": "AI-powered version tracking and changelog management | AI驱动的版本追踪与更新日志管理",
   "version": "0.0.1",
   "publisher": "MuRyan",
   "repository": {
@@ -46,17 +46,55 @@
     "commands": [
       {
         "command": "version-tracker.addFeature",
-        "title": "添加新功能记录"
+        "title": "Version AI Tracker: Add New Feature",
+        "category": "Version AI Tracker",
+        "title.zh-cn": "Version AI Tracker: 添加新功能记录"
       },
       {
         "command": "version-tracker.addBugfix",
-        "title": "添加Bug修复记录"
+        "title": "Version AI Tracker: Add Bug Fix",
+        "category": "Version AI Tracker",
+        "title.zh-cn": "Version AI Tracker: 添加Bug修复记录"
       },
       {
         "command": "version-tracker.createNewVersion",
-        "title": "创建新版本"
+        "title": "Version AI Tracker: Create New Version",
+        "category": "Version AI Tracker",
+        "title.zh-cn": "Version AI Tracker: 创建新版本"
       }
-    ]
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "version-tracker.addFeature",
+          "when": "true"
+        },
+        {
+          "command": "version-tracker.addBugfix",
+          "when": "true"
+        },
+        {
+          "command": "version-tracker.createNewVersion",
+          "when": "true"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Version AI Tracker",
+      "properties": {
+        "version-ai-tracker.language": {
+          "type": "string",
+          "default": "auto",
+          "enum": ["auto", "en", "zh-cn"],
+          "enumDescriptions": [
+            "Automatically detect language",
+            "English",
+            "简体中文"
+          ],
+          "description": "Language setting for Version AI Tracker"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
