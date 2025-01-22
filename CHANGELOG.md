@@ -3,6 +3,7 @@
 ## [未发布]
 ### 新功能 🎉
 - 完善日志输出系统，优化代码总结功能 (@MuRyanice)
+- 完善日志输出系统，优化代码总结功能 (@MuRyanice)
 - 优化Cursor API调用方式，支持多种API路径 (@MuRyanice)
 - 添加详细日志输出以追踪代码总结过程 (@MuRyanice)
 - 添加代码自动总结功能 (@MuRyanice)
