@@ -48,6 +48,19 @@ We welcome contributions! If you have suggestions or find bugs:
 - Email: mylapland99@gmail.com
 - Twitter: [@MuRyanice](https://twitter.com/MuRyanice)
 
+### 📋 Version History
+
+#### v0.0.2
+- ✨ Added AI-powered code summary for Git commits
+- 🔧 Enhanced error handling and backup functionality
+- 🌐 Improved Cursor API integration
+
+#### v0.0.1
+- 🎉 Initial release
+- ✨ Basic changelog management
+- 🔄 Git commit monitoring
+- 🌍 Bilingual support (English/Chinese)
+
 ## 简体中文
 
 一款由 AI 驱动的 VSCode 和 Cursor 版本追踪插件。自动监控 Git 提交，智能分类变更，维护结构化的更新日志。
@@ -90,9 +103,22 @@ We welcome contributions! If you have suggestions or find bugs:
 
 ### 📞 联系与支持
 
-- GitHub Issues：[报告问题](https://github.com/MuRyanice/version-tracker/issues)
-- 邮箱：mylapland99@gmail.com
-- 推特：[@MuRyanice](https://twitter.com/ForInitial)
+- GitHub Issues: [报告问题](https://github.com/MuRyanice/version-tracker/issues)
+- 邮箱: mylapland99@gmail.com
+- Twitter: [@MuRyanice](https://twitter.com/MuRyanice)
+
+### 📋 版本历史
+
+#### v0.0.2
+- ✨ 新增 Git 提交的 AI 代码总结功能
+- 🔧 增强错误处理和备份功能
+- 🌐 改进 Cursor API 集成
+
+#### v0.0.1
+- 🎉 首次发布
+- ✨ 基础更新日志管理
+- 🔄 Git 提交监控
+- 🌍 双语支持（中文/英文）
 
 ## License
 

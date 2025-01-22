@@ -2,6 +2,7 @@
 
 ## [未发布]
 ### 新功能 🎉
+- 优化 ChangelogManager 类，添加错误处理和备份功能 (@MuRyanice)
 - 完善日志输出系统，优化代码总结功能 (@MuRyanice)
 - 完善日志输出系统，优化代码总结功能 (@MuRyanice)
 - 优化Cursor API调用方式，支持多种API路径 (@MuRyanice)
