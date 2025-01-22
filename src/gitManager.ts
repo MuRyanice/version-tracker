@@ -36,24 +36,53 @@ export class GitManager {
             // 获取最新的 commit 信息
             const log = await this.git.log({ maxCount: 1 });
             if (log.latest) {
-                const { message, author_name } = log.latest;
+                const { message, author_name, hash } = log.latest;
+                
+                // 获取本次提交的代码变更
+                const diff = await this.git.diff([`${hash}^`, hash]);
+                
+                // 调用 Cursor API 进行代码总结
+                const summary = await this.getCodeSummary(diff);
                 
                 // 添加日志输出
                 vscode.window.showInformationMessage(`检测到提交 | Commit detected: ${message}`);
                 
-                // 解析 commit 消息
+                // 解析 commit 消息并添加总结
                 if (message.startsWith('feat:')) {
                     const description = message.substring(5).trim();
-                    await this.changelogManager.addFeature(description, author_name);
+                    await this.changelogManager.addFeature(`${description}\n   总结: ${summary}`, author_name);
                     vscode.window.showInformationMessage('已添加新功能记录 | New feature record added');
                 } else if (message.startsWith('fix:')) {
                     const description = message.substring(4).trim();
-                    await this.changelogManager.addBugfix(description, author_name);
+                    await this.changelogManager.addBugfix(`${description}\n   总结: ${summary}`, author_name);
                     vscode.window.showInformationMessage('已添加Bug修复记录 | Bug fix record added');
                 }
             }
         } catch (error: any) {
             vscode.window.showErrorMessage(`处理Git提交失败 | Failed to process Git commit: ${error.message}`);
+        }
+    }
+
+    private async getCodeSummary(diff: string): Promise<string> {
+        try {
+            // 检查是否在 Cursor 环境中
+            const isCursor = vscode.env.appName.toLowerCase().includes('cursor');
+            if (!isCursor) {
+                return '(代码总结功能仅在 Cursor 中可用)';
+            }
+
+            // 调用 Cursor API 进行代码总结
+            // 注意：这里需要根据实际的 Cursor API 进行调整
+            const cursorApi = (vscode as any).cursor;
+            if (!cursorApi || !cursorApi.summarizeCode) {
+                return '(Cursor API 不可用)';
+            }
+
+            const summary = await cursorApi.summarizeCode(diff);
+            return summary || '(无代码变更总结)';
+        } catch (error: any) {
+            console.error('代码总结失败:', error);
+            return '(代码总结失败)';
         }
     }
 } 
