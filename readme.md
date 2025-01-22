@@ -105,7 +105,7 @@ We welcome contributions! If you have suggestions or find bugs:
 
 - GitHub Issues: [报告问题](https://github.com/MuRyanice/version-tracker/issues)
 - 邮箱: mylapland99@gmail.com
-- Twitter: [@MuRyanice](https://twitter.com/MuRyanice)
+- Twitter:[@MuRyanice](https://twitter.com/ForInitial)
 
 ### 📋 版本历史
 
