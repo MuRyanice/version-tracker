@@ -72,14 +72,17 @@ export class GitManager {
             }
 
             // 调用 Cursor API 进行代码总结
-            // 注意：这里需要根据实际的 Cursor API 进行调整
-            const cursorApi = (vscode as any).cursor;
-            if (!cursorApi || !cursorApi.summarizeCode) {
+            const cursorApi = (vscode as any).workspace;
+            if (!cursorApi || !cursorApi.summarizeChanges) {
                 return '(Cursor API 不可用)';
             }
 
-            const summary = await cursorApi.summarizeCode(diff);
-            return summary || '(无代码变更总结)';
+            // 使用 Cursor 的 summarizeChanges API
+            const summary = await cursorApi.summarizeChanges(diff);
+            if (typeof summary === 'string') {
+                return summary;
+            }
+            return summary?.summary || '(无代码变更总结)';
         } catch (error: any) {
             console.error('代码总结失败:', error);
             return '(代码总结失败)';
