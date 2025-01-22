@@ -8,7 +8,7 @@ export class ChangelogManager {
     constructor() {
         this.initializeChangelog();
     }
-
+//测试是否日志更新
     private async initializeChangelog() {
         const workspaceFolders = vscode.workspace.workspaceFolders;
         if (!workspaceFolders) {
