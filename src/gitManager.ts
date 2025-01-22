@@ -67,18 +67,27 @@ export class GitManager {
         try {
             // 检查是否在 Cursor 环境中
             const isCursor = vscode.env.appName.toLowerCase().includes('cursor');
+            console.log('当前环境:', vscode.env.appName);
+            console.log('是否在Cursor中:', isCursor);
+            
             if (!isCursor) {
                 return '(代码总结功能仅在 Cursor 中可用)';
             }
 
             // 调用 Cursor API 进行代码总结
             const cursorApi = (vscode as any).workspace;
+            console.log('Cursor API 状态:', cursorApi ? '可用' : '不可用');
+            console.log('summarizeChanges API 状态:', cursorApi?.summarizeChanges ? '可用' : '不可用');
+            
             if (!cursorApi || !cursorApi.summarizeChanges) {
                 return '(Cursor API 不可用)';
             }
 
             // 使用 Cursor 的 summarizeChanges API
+            console.log('开始调用代码总结API...');
             const summary = await cursorApi.summarizeChanges(diff);
+            console.log('代码总结结果:', summary);
+            
             if (typeof summary === 'string') {
                 return summary;
             }
