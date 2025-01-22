@@ -2,7 +2,7 @@
   "name": "version-ai-tracker",
   "displayName": "Version AI Tracker - 版本AI自动化管理神器",
   "description": "AI-powered version tracking and changelog management | AI驱动的版本追踪与更新日志管理",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "MuRyan",
   "repository": {
     "type": "git",

@@ -46,9 +46,14 @@ We welcome contributions! If you have suggestions or find bugs:
 
 - GitHub Issues: [Report Bug](https://github.com/MuRyanice/version-tracker/issues)
 - Email: mylapland99@gmail.com
-- Twitter: [@MuRyanice](https://twitter.com/MuRyanice)
+- Twitter: [@forinitial](https://twitter.com/forinitial)
 
 ### 📋 Version History
+
+#### v0.0.3
+- 🔄 Updated package version and documentation
+- 📝 Improved version history format
+- 🌟 Enhanced overall stability
 
 #### v0.0.2
 - ✨ Added AI-powered code summary for Git commits
@@ -108,6 +113,11 @@ We welcome contributions! If you have suggestions or find bugs:
 - Twitter:[@MuRyanice](https://twitter.com/ForInitial)
 
 ### 📋 版本历史
+
+#### v0.0.3
+- 🔄 更新包版本和文档
+- 📝 改进版本历史格式
+- 🌟 增强整体稳定性
 
 #### v0.0.2
 - ✨ 新增 Git 提交的 AI 代码总结功能
