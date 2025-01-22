@@ -2,22 +2,13 @@
 
 ## [未发布]
 ### 新功能 🎉
+- 优化Cursor API调用方式，支持多种API路径 (@MuRyanice)
+- 添加详细日志输出以追踪代码总结过程 (@MuRyanice)
+- 添加代码自动总结功能 (@MuRyanice)
 - 初始化版本AI追踪插件，实现基础功能 (@MuRyanice)
 - 初始化版本AI追踪插件，实现基础功能 (@MuRyanice)
 - 初始化版本AI追踪插件，实现基础功能 (@MuRyanice)
+- 测试AI是否自动总计本次代码更新
 
 ### Bug 修复 🐛
-- 修复changelog格式问题 (@MuRyanice)
-- 修复changelog格式问题 (@MuRyanice)
-- 修复changelog格式问题 (@MuRyanice)
-
-## [v0.1.0] - 2025-01-17
-### 新功能 🎉
-- 添加Git自动监听功能 (@MuRyanice)
-- 初始化版本追踪插件项目 (@MuRyanice)
-- 初始化版本追踪插件项目 (@MuRyanice)
-- 初始化版本追踪插件项目 (@MuRyanice)
-- 测试一下是否成功添加了测试插件 (@unknown)
-
-### Bug 修复 🐛
-- 修复changelog格式问题 (@MuRyanice)
+- 修复代码总结API调用方式 (@MuRyanice)
